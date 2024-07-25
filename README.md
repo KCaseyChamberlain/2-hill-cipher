@@ -1,32 +1,58 @@
-Hill 2-Cipher Encryption and Decryption System
+# Hill 2-Cipher Encryption and Decryption System
 
-Application PreReq: 
-Input string for encryption must be all capitals A-Z, and have an even count of characters. 
-Input string for decryption must be all capitals A-Z and can include a space, question mark, and/or exclamation mark. Decryption input string must also have an even count of characters.
+## Application PreRequisites
 
-Predefined Characteristics: 
-A=0, B=1, C=2, …, “space”=26, “?”=27, “!”=28.
-M1 = [6 11 25 15]
-M2 = [28 7 19 18]
-M3 = Modular inverse M1 = [21 21 17 24]
-M4 = Module inverse M2 = [26 6 8 5]
+- **Encryption**:
+  - Input string must be all capitals A-Z.
+  - Must have an even count of characters.
 
-***Initial run for both encryption and decryption will validate prerequisite requirements are fulfilled.
+- **Decryption**:
+  - Input string must be all capitals A-Z.
+  - Can include a space, question mark, and/or exclamation mark.
+  - Must have an even count of characters.
 
-Encryption:
-First, we will assign each character to a numerical value.
-The code will create an array that will store inner arrays that will represent a 2x1 vertex. In the order of the input string, each vertex will hold two numerical values that each represents a specific character.
-For each inner array that represents a vertex (we will call this V1) that needs encryption the application will:
-Multiply (M1 * V1) % 26 = V2. (This will result in a new 2x1 vertex.)
-Multiply(M2 * V2) % 29 = V3. (This will result in a new 2x1 vertex.)
-V3 now has an encrypted value of 0-28, which represents A-Z, “space”, “?”, and “!”.
-The code will then take each of these number values in order, convert them to a string and print the encrypted message.
+## Predefined Characteristics
 
-Decryption:
-First, we will assign each character to a numerical value.
-The code will create an array that will store inner arrays that will represent a 2x1 vertex. In the order of the input string, each vertex will hold two numerical values that each represents a specific character.
-For each inner array that represents a vertex (we will call this V3) that needs decryption the application will:
-Multiply (M4 * V3) = V2. (This will result in a new 2x1 vertex.)
-Multiply(M3 * V2) = V1. (This will result in a new 2x1 vertex.)
-V1 now has the decrypted value of 0-25, which represents A-Z.
-The code will then take each of these number values in order, convert them to a string and print the decrypted message.
+- A=0, B=1, C=2, …, “space”=26, “?”=27, “!”=28.
+- \( M1 = \begin{bmatrix} 6 & 11 \\ 25 & 15 \end{bmatrix} \)
+- \( M2 = \begin{bmatrix} 28 & 7 \\ 19 & 18 \end{bmatrix} \)
+- \( M3 = \text{Modular inverse of } M1 = \begin{bmatrix} 21 & 21 \\ 17 & 24 \end{bmatrix} \)
+- \( M4 = \text{Modular inverse of } M2 = \begin{bmatrix} 26 & 6 \\ 8 & 5 \end{bmatrix} \)
+
+> **Note**: Initial run for both encryption and decryption will validate prerequisite requirements are fulfilled.
+
+## Encryption Process
+
+1. **Character to Numerical Value Assignment**:
+   - Assign each character in the input string to its corresponding numerical value.
+
+2. **Create Vertex Array**:
+   - Create an array to store inner arrays, each representing a 2x1 vertex.
+   - Each vertex holds two numerical values representing specific characters from the input string.
+
+3. **Encrypt Each Vertex**:
+   - For each vertex \( V1 \):
+     - Multiply: \( V2 = (M1 \times V1) \mod 26 \).
+     - Multiply: \( V3 = (M2 \times V2) \mod 29 \).
+
+4. **Convert Encrypted Values to String**:
+   - Convert each number value in \( V3 \) to its corresponding character.
+   - Print the encrypted message.
+
+## Decryption Process
+
+1. **Character to Numerical Value Assignment**:
+   - Assign each character in the input string to its corresponding numerical value.
+
+2. **Create Vertex Array**:
+   - Create an array to store inner arrays, each representing a 2x1 vertex.
+   - Each vertex holds two numerical values representing specific characters from the input string.
+
+3. **Decrypt Each Vertex**:
+   - For each vertex \( V3 \):
+     - Multiply: \( V2 = M4 \times V3 \).
+     - Multiply: \( V1 = M3 \times V2 \).
+
+4. **Convert Decrypted Values to String**:
+   - Convert each number value in \( V1 \) to its corresponding character.
+   - Print the decrypted message.
