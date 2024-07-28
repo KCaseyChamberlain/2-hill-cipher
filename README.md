@@ -1,4 +1,4 @@
-# Hill 2-Cipher Encryption and Decryption System
+# 2-Hill Cipher
 
 ## Application PreRequisites
 
