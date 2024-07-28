@@ -1,4 +1,4 @@
-# 2-Hill Cipher
+# 2-hill-cipher.js
 
 ## Application PreRequisites
 
