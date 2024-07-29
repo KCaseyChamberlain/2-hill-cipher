@@ -50,8 +50,8 @@
 
 3. **Decrypt Each Vertex**:
    - For each vertex \( V3 \):
-     - Multiply: \( V2 = M4 \times V3 \).
-     - Multiply: \( V1 = M3 \times V2 \).
+     - Multiply: \( V2 = (M4 \times V3) \mod 29 \).
+     - Multiply: \( V1 = (M3 \times V2) \mod 26 \).
 
 4. **Convert Decrypted Values to String**:
    - Convert each number value in \( V1 \) to its corresponding character.
