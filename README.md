@@ -14,10 +14,11 @@
 ## Predefined Characteristics
 
 - A=0, B=1, C=2, …, “space”=26, “?”=27, “!”=28.
-- \( M1 = \begin{bmatrix} 6 & 11 \\ 25 & 15 \end{bmatrix} \)
-- \( M2 = \begin{bmatrix} 28 & 7 \\ 19 & 18 \end{bmatrix} \)
-- \( M3 = \text{Modular inverse of } M1 = \begin{bmatrix} 21 & 21 \\ 17 & 24 \end{bmatrix} \)
-- \( M4 = \text{Modular inverse of } M2 = \begin{bmatrix} 26 & 6 \\ 8 & 5 \end{bmatrix} \)
+- M1 = [6 11, 25 15]
+- M2 = [28 7, 19 18]
+- M3 = Modular inverse of M1 = [21 21, 17 24]
+- M4 = Modular inverse of M2 = [26 6, 8 5]
+
 
 > **Note**: Initial run for both encryption and decryption will validate prerequisite requirements are fulfilled.
 
